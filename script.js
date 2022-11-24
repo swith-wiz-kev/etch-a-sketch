@@ -1,6 +1,6 @@
 function createGrid(sideLength) {
+    deleteSquares();
     const container = document.querySelector('.grid.container');
-    // delete all elements inside container
     const gridSquares = document.createElement('div');
     gridSquares.className = "grid squares";
     const width = Math.floor((800-sideLength) / sideLength);
@@ -20,6 +20,13 @@ function createGrid(sideLength) {
         }
         
     }
+}
+
+function deleteSquares() {
+    const body= document.querySelector('body');
+    const oldContainer = document.querySelector('.grid.container');
+    const newContainer = oldContainer.cloneNode(false);
+    body.replaceChild(newContainer,oldContainer);
 }
 
 createGrid(12);
