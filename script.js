@@ -3,8 +3,8 @@ function createGrid(sideLength) {
     const container = document.querySelector('.grid.container');
     const gridSquares = document.createElement('div');
     gridSquares.className = "grid squares";
-    const width = Math.floor((800-sideLength) / sideLength);
-    const offset = Math.floor((800 - (width+1)*sideLength)/2);
+    const width = Math.floor(800/sideLength -1); //1px removed for border
+    const offset = Math.floor((800 - (width+1)*sideLength)/2); //used for centering
     gridSquares.style.width = width + 'px';
     gridSquares.style.height = width + 'px';
     let topPosition = 0;
@@ -22,6 +22,15 @@ function createGrid(sideLength) {
     }
 }
 
+function newGrid() {
+    let sideLength = "";
+    while (!(sideLength >=2 && sideLength <= 100 )) {
+    sideLength = prompt('Please enter number of squares in one side of new grid. (2-100)');
+    sideLength = Math.round(Number(sideLength));
+    }
+    createGrid(sideLength);
+}
+
 function deleteSquares() {
     const body= document.querySelector('body');
     const oldContainer = document.querySelector('.grid.container');
@@ -29,4 +38,6 @@ function deleteSquares() {
     body.replaceChild(newContainer,oldContainer);
 }
 
-createGrid(12);
+const changeGridButton = document.querySelector('.control.button')
+changeGridButton.addEventListener('click',()=>newGrid())
+createGrid(16);

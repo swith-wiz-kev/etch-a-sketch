@@ -19,8 +19,8 @@ body {
     align-items: center;
     justify-content: center;
     position: relative;
-    margin-top: 50px;
-    margin-bottom: 30px;
+    margin-top: 20px;
+    margin-bottom: 10px;
 }
 
 .grid .squares {
@@ -30,5 +30,28 @@ body {
 }
 
 .control.container {
-    height: 500px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.control.button {
+    height: 60px;
+    width: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(55, 194, 194, 0.664);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', Arial, sans-serif;
+    background-color: rgb(160, 88, 0);
+    border-radius: 5px;
+    border: 3px solid grey;
+    font-size: 30px;
+    transition: 0.4s;
+}
+
+.control.button:hover {
+    background-color: rgb(255, 140, 0);
+    color: rgb(25, 90, 90);
 }
