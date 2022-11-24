@@ -33,7 +33,6 @@ function changeColor(event) {
             event.target.style.backgroundColor = '#'+ (Math.floor(Math.random()*0xffffff).toString(16)).padStart(6,'0');
             break;
         case 'whiten':
-            console.log(window.getComputedStyle(event.target).getPropertyValue("background-color"));
             const rgb2hex = (rgb) => `${rgb.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/).slice(1).map(n => parseInt(n, 10).toString(16).padStart(2, '0')).join('')}`;
             const hexValue = rgb2hex(window.getComputedStyle(event.target).getPropertyValue("background-color"));
             const hexValue1 = Math.min(Number(`0x${hexValue.slice(0,2)}`) +0x1a,0xff);
